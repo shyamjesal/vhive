@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        module: [taps, misc]
+        module: [misc]
     steps:
     - name: Set up Go 1.x
       uses: actions/setup-go@v2
@@ -37,12 +37,6 @@ jobs:
       run: |
         make -C $MODULE test
         make -C $MODULE test-man
-
-    - name: Run vHive end-to-end tests
-      run: make test
-
-    - name: Run vHive tests that need manual cleaning
-      run: make test-man-bench
   
   ctriface-test:
     name: ctriface integration tests on self hosted runners
