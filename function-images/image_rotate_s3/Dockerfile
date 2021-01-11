@@ -8,7 +8,6 @@ RUN apk add --no-cache --virtual .build-deps \
 
 FROM vhiveease/py_grpc:base as var_workload
 COPY *.py /
-RUN true
 COPY --from=builder_workload /root/.local /root/.local
 RUN apk add libstdc++ libjpeg-turbo --update --no-cache
 
