@@ -9,6 +9,8 @@ You can use the image to build/test/develop vHive inside a container. This image
 git clone -b custom_docker_params_for_vHive https://github.com/ease-lab/kind
 # build kind
 cd kind && go build
+# pull latest image
+docker pull vhiveease/vhive_dev_env
 # Start a container 
 kind create cluster --image vhiveease/vhive_dev_env
 # Enter the container
